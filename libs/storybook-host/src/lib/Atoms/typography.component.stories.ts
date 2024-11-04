@@ -9,6 +9,13 @@ export default meta;
 
 type Story = StoryObj<TypographyComponent>;
 
-export const Primary: Story = {
+export const Title1: Story = {
   args: {},
+  render: () => ({
+    template: `
+      <ab-typography>
+        Text
+      </ab-typography>
+    `,
+  }),
 };
