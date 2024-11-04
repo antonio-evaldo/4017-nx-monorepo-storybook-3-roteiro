@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
 import { TypographyComponent } from '@alfabit-alura-teste/typography';
 
 const meta: Meta<TypographyComponent> = {
@@ -10,10 +10,13 @@ export default meta;
 type Story = StoryObj<TypographyComponent>;
 
 export const Title1: Story = {
-  args: {},
-  render: () => ({
+  args: {
+    type: 'title1',
+  },
+  render: (args) => ({
+    props: args,
     template: `
-      <ab-typography>
+      <ab-typography ${argsToTemplate(args)}>
         Text
       </ab-typography>
     `,
