@@ -15,6 +15,11 @@ export const Title1: Story = {
   },
   render: (args) => ({
     props: args,
+    /* 
+      class ComponenteExternoTitle1 {
+        @Input() type = 'title1'
+      }
+    */
     template: `
       <ab-typography ${argsToTemplate(args)}>
         Text
