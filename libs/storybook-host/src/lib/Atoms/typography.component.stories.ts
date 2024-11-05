@@ -12,15 +12,9 @@ type Story = StoryObj<TypographyComponent>;
 export const Title1: Story = {
   args: {
     type: 'normal',
-    size: 'xs',
   },
   render: (args) => ({
     props: args,
-    /* 
-      class ComponenteExternoTitle1 {
-        @Input() type = 'title1'
-      }
-    */
     template: `
       <ab-typography ${argsToTemplate(args)}>
         Text
