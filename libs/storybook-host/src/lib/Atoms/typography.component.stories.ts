@@ -25,8 +25,25 @@ export const Title1: Story = {
 
 export const Title2: Story = {
   args: {
-    ...Title1.args,
     type: 'title2',
+  },
+};
+
+export const Title3: Story = {
+  args: {
+    type: 'title3',
+  },
+};
+
+export const Subtitle1: Story = {
+  args: {
+    type: 'subtitle1',
+  },
+};
+
+export const Subtitle2: Story = {
+  args: {
+    type: 'subtitle2',
   },
 };
 
@@ -40,6 +57,20 @@ export const TextMedium: Story = {
   args: {
     ...TextLarge.args,
     size: 'md',
+  },
+};
+
+export const TextSmall: Story = {
+  args: {
+    ...TextLarge.args,
+    size: 'sm',
+  },
+};
+
+export const TextExtraSmall: Story = {
+  args: {
+    ...TextLarge.args,
+    size: 'xs',
   },
 };
 
