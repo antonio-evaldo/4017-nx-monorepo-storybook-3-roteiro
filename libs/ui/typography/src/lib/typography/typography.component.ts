@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 type Text =
@@ -11,14 +18,22 @@ type Text =
 
 @Component({
   standalone: true,
-  template: `<h1>Título h1</h1>`,
+  template: `
+    <h1>
+      <ng-content />
+    </h1>
+  `,
   styleUrl: './typography.component.css',
 })
 class H1Component {}
 
 @Component({
   standalone: true,
-  template: `<span>Texto span</span>`,
+  template: `
+    <span>
+      <ng-content />
+    </span>
+  `,
   styleUrl: './typography.component.css',
 })
 class SpanComponent {}
@@ -33,7 +48,11 @@ class SpanComponent {}
 export class TypographyComponent implements OnInit {
   @Input() type: Text = 'normal';
 
+  @ViewChild('template', { static: true }) template!: TemplateRef<unknown>;
+
   component: any;
+
+  dynamicComponentContent!: any[][];
 
   private componentsMap = {
     title1: H1Component,
@@ -44,7 +63,15 @@ export class TypographyComponent implements OnInit {
     normal: SpanComponent,
   } satisfies { [key in Text]: any };
 
+  constructor(private viewContainerRef: ViewContainerRef) {}
+
   ngOnInit(): void {
     this.component = this.componentsMap[this.type];
+
+    const templateContent = this.viewContainerRef.createEmbeddedView(
+      this.template
+    ).rootNodes;
+
+    this.dynamicComponentContent = [templateContent];
   }
 }
