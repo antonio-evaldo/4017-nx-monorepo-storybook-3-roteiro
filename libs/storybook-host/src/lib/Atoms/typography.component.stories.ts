@@ -52,12 +52,13 @@ export const Title2WithMediumSize: Story = {
 
 export const Paragraph: Story = {
   args: {
-    ...TextLarge.args,
+    ...TextSmall.args,
   },
-  render: () => ({
+  render: (args) => ({
+    props: args,
     template: `
       <p>
-        <ab-typography>
+        <ab-typography ${argsToTemplate(args)}>
           Texto do parágrafo
         </ab-typography>
       </p>
