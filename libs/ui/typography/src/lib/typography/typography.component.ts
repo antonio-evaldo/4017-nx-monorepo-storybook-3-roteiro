@@ -16,27 +16,42 @@ type Text =
   | 'subtitle2'
   | 'normal';
 
+type Size =
+  | 'title1'
+  | 'title2'
+  | 'title3'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'lg'
+  | 'md'
+  | 'sm'
+  | 'xs';
+
 @Component({
   standalone: true,
   template: `
-    <h1>
+    <h1 class="typography {{ size }}">
       <ng-content />
     </h1>
   `,
   styleUrl: './typography.component.css',
 })
-class H1Component {}
+class H1Component {
+  @Input() size!: Size;
+}
 
 @Component({
   standalone: true,
   template: `
-    <span>
+    <span class="typography {{ size }}">
       <ng-content />
     </span>
   `,
   styleUrl: './typography.component.css',
 })
-class SpanComponent {}
+class SpanComponent {
+  @Input() size!: Size;
+}
 
 @Component({
   selector: 'ab-typography',
@@ -47,6 +62,11 @@ class SpanComponent {}
 })
 export class TypographyComponent implements OnInit {
   @Input() type: Text = 'normal';
+  @Input() size!: Size;
+
+  get inputs() {
+    return { size: this.size };
+  }
 
   @ViewChild('template', { static: true }) template!: TemplateRef<unknown>;
 

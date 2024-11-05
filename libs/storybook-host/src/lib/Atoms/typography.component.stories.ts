@@ -11,7 +11,8 @@ type Story = StoryObj<TypographyComponent>;
 
 export const Title1: Story = {
   args: {
-    type: 'title1',
+    type: 'normal',
+    size: 'xs',
   },
   render: (args) => ({
     props: args,
