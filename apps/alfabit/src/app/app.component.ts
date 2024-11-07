@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { ButtonComponent } from '@alfabit-alura-teste/button';
+import { ButtonComponent } from '@alfabit-alura-teste-acesso/button';
 
 @Component({
   standalone: true,

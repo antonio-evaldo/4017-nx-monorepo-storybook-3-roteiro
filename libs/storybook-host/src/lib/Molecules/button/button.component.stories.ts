@@ -1,5 +1,5 @@
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
-import { ButtonComponent } from '@alfabit-alura-teste/button';
+import { ButtonComponent } from '@alfabit-alura-teste-acesso/button';
 
 const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,

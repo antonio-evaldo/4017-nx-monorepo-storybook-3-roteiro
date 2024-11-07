@@ -1,5 +1,5 @@
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
-import { TypographyComponent } from '@alfabit-alura-teste/typography';
+import { TypographyComponent } from '@alfabit-alura-teste-acesso/typography';
 
 const meta: Meta<TypographyComponent> = {
   component: TypographyComponent,

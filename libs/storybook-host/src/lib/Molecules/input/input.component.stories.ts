@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { InputComponent } from '@alfabit-alura-teste/input';
+import { InputComponent } from '@alfabit-alura-teste-acesso/input';
 
 const meta: Meta<InputComponent> = {
   component: InputComponent,

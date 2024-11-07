@@ -1,5 +1,5 @@
 {
-  "name": "@alfabit-alura-teste/button",
+  "name": "@alfabit-alura-teste-acesso/button",
   "version": "1.1.0",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "@alfabit-alura-teste/typography": "0.0.1"
+    "@alfabit-alura-teste-acesso/typography": "0.0.1"
   },
   "sideEffects": false,
   "publishConfig": {

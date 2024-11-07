@@ -4,5 +4,5 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
-  "allowedNonPeerDependencies": ["@alfabit-alura-teste/*"]
+  "allowedNonPeerDependencies": ["@alfabit-alura-teste-acesso/*"]
 }
