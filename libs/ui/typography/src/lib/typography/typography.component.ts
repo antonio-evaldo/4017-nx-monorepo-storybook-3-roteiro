@@ -33,7 +33,7 @@ type Text =
   styleUrl: './typography.component.css',
 })
 export class TypographyComponent implements OnInit {
-  @Input() type: Text = 'normal';
+  @Input() variant: Text = 'normal';
   @Input() size!: Size;
 
   get inputs() {
@@ -58,7 +58,7 @@ export class TypographyComponent implements OnInit {
   constructor(private viewContainerRef: ViewContainerRef) {}
 
   ngOnInit(): void {
-    this.component = this.componentsMap[this.type];
+    this.component = this.componentsMap[this.variant];
 
     const templateContent = this.viewContainerRef.createEmbeddedView(
       this.template

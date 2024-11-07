@@ -19,37 +19,37 @@ type Story = StoryObj<TypographyComponent>;
 
 export const Title1: Story = {
   args: {
-    type: 'title1',
+    variant: 'title1',
   },
 };
 
 export const Title2: Story = {
   args: {
-    type: 'title2',
+    variant: 'title2',
   },
 };
 
 export const Title3: Story = {
   args: {
-    type: 'title3',
+    variant: 'title3',
   },
 };
 
 export const Subtitle1: Story = {
   args: {
-    type: 'subtitle1',
+    variant: 'subtitle1',
   },
 };
 
 export const Subtitle2: Story = {
   args: {
-    type: 'subtitle2',
+    variant: 'subtitle2',
   },
 };
 
 export const TextLarge: Story = {
   args: {
-    type: 'normal',
+    variant: 'normal',
   },
 };
 
