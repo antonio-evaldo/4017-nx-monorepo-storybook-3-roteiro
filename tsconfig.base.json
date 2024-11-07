@@ -17,6 +17,7 @@
     "paths": {
       "@alfabit-alura-teste-acesso/button": ["libs/ui/button/src/index.ts"],
       "@alfabit-alura-teste-acesso/input": ["libs/ui/input/src/index.ts"],
+      "@alfabit-alura-teste-acesso/modal": ["libs/ui/modal/src/index.ts"],
       "@alfabit-alura-teste-acesso/typography": [
         "libs/ui/typography/src/index.ts"
       ],
