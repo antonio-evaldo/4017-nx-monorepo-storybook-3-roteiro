@@ -1,16 +1,26 @@
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
 import { ButtonComponent } from '@alfabit-alura-teste-acesso/button';
 
-const meta: Meta<ButtonComponent> = {
+type ButtonInputsAndCustomArgs = ButtonComponent & { text: string };
+
+const meta: Meta<ButtonInputsAndCustomArgs> = {
   component: ButtonComponent,
-  render: (args) => ({
-    props: args,
+  args: {
+    text: 'Action',
+  },
+  render: ({ text, ...buttonArgs }) => ({
+    props: buttonArgs,
     template: `
-      <ab-button ${argsToTemplate(args)}>
-        Action
+      <ab-button ${argsToTemplate(buttonArgs)}>
+        ${text}
       </ab-button>
     `,
   }),
+  parameters: {
+    controls: {
+      exclude: ['getClasses'],
+    },
+  },
 };
 
 export default meta;
