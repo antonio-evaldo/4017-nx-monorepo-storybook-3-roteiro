@@ -11,6 +11,11 @@ const meta: Meta<TypographyComponent> = {
       </ab-typography>
     `,
   }),
+  parameters: {
+    controls: {
+      include: ['variant', 'size'],
+    },
+  },
 };
 
 export default meta;
