@@ -1,19 +1,24 @@
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
 import { TypographyComponent } from '@alfabit-alura-teste-acesso/typography';
 
-const meta: Meta<TypographyComponent> = {
+type TypographyInputsAndCustomArgs = TypographyComponent & { text: string };
+
+const meta: Meta<TypographyInputsAndCustomArgs> = {
   component: TypographyComponent,
-  render: (args) => ({
-    props: args,
+  args: {
+    text: 'Text',
+  },
+  render: ({ text, ...typographyArgs }) => ({
+    props: typographyArgs,
     template: `
-      <ab-typography ${argsToTemplate(args)}>
-        Text
+      <ab-typography ${argsToTemplate(typographyArgs)}>
+        ${text}
       </ab-typography>
     `,
   }),
   parameters: {
     controls: {
-      include: ['variant', 'size'],
+      include: ['variant', 'size', 'text'],
     },
   },
 };
