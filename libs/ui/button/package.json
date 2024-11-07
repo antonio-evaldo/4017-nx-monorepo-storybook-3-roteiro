@@ -1,13 +1,13 @@
 {
   "name": "@alfabit-alura-teste-acesso/button",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "@alfabit-alura-teste-acesso/typography": "0.0.1"
+    "@alfabit-alura-teste-acesso/typography": "2.0.0"
   },
   "sideEffects": false,
   "publishConfig": {
