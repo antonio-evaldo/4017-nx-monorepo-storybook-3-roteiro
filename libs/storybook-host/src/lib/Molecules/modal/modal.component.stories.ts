@@ -40,9 +40,16 @@ export default meta;
 
 type Story = StoryObj<ModalComponent>;
 
-export const Primary: Story = {
+export const Open: Story = {
   args: {
     modalTitle: 'Heading',
+    isOpen: true,
+  },
+};
+
+export const Closed: Story = {
+  args: {
+    ...Open.args,
     isOpen: false,
   },
 };
