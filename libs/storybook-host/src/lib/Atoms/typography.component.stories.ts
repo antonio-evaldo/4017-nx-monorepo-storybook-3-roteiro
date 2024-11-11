@@ -25,7 +25,7 @@ const meta: Meta<TypographyInputsAndCustomArgs> = {
 
 export default meta;
 
-type Story = StoryObj<TypographyComponent>;
+type Story = StoryObj<TypographyInputsAndCustomArgs>;
 
 export const Title1: Story = {
   args: {
@@ -95,12 +95,12 @@ export const Paragraph: Story = {
   args: {
     ...TextSmall.args,
   },
-  render: (args) => ({
-    props: args,
+  render: ({ text, ...typographyArgs }) => ({
+    props: typographyArgs,
     template: `
-      <p>
-        <ab-typography ${argsToTemplate(args)}>
-          Texto do parágrafo
+      <p>  
+        <ab-typography ${argsToTemplate(typographyArgs)}>
+          ${text}
         </ab-typography>
       </p>
     `,
