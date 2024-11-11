@@ -2,7 +2,9 @@ import {
   AfterViewChecked,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,6 +21,8 @@ export class ModalComponent implements AfterViewChecked {
   @Input() modalTitle = '';
   @Input() isOpen = false;
 
+  @Output() closed = new EventEmitter();
+
   @ViewChild('modal') modal!: ElementRef<HTMLDialogElement>;
 
   ngAfterViewChecked(): void {
@@ -26,6 +30,12 @@ export class ModalComponent implements AfterViewChecked {
       this.modal.nativeElement.showModal();
     } else {
       this.modal.nativeElement.close();
+    }
+  }
+
+  closeModal(): void {
+    if (this.isOpen) {
+      this.closed.emit();
     }
   }
 }
